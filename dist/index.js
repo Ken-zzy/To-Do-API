@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const dotenv_1 = __importDefault(require("dotenv"));
-const Note_1 = __importDefault(require("./models/Note"));
+const note_1 = __importDefault(require("./models/note"));
 const errors_1 = require("./errors");
 dotenv_1.default.config();
 const app = (0, express_1.default)();
@@ -26,12 +26,12 @@ mongoose_1.default.connect(mongoUri)
     .then(() => console.log('MongoDB Connected'))
     .catch((err) => console.log(err));
 app.get('/api/notes', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const notes = yield Note_1.default.find();
+    const notes = yield note_1.default.find();
     res.json(notes);
 }));
 app.get('/api/notes/:id', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const note = yield Note_1.default.findById(req.params.id);
+        const note = yield note_1.default.findById(req.params.id);
         if (!note) {
             throw new errors_1.NotFoundError('Note not found');
         }
@@ -43,7 +43,7 @@ app.get('/api/notes/:id', (req, res, next) => __awaiter(void 0, void 0, void 0, 
 }));
 app.post('/api/notes', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const note = new Note_1.default(req.body);
+        const note = new note_1.default(req.body);
         yield note.save();
         res.status(201).json(note);
     }
@@ -53,7 +53,7 @@ app.post('/api/notes', (req, res, next) => __awaiter(void 0, void 0, void 0, fun
 }));
 app.delete('/api/notes/:id', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const note = yield Note_1.default.findByIdAndDelete(req.params.id);
+        const note = yield note_1.default.findByIdAndDelete(req.params.id);
         if (!note) {
             throw new errors_1.NotFoundError('Note not found');
         }
