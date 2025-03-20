@@ -1,39 +1,38 @@
 {
-    "name": "api's",
+    "name": "to-do-api",
     "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
+    "description": "Note-taking API with user authentication",
+    "main": "dist/index.js",
     "scripts": {
         "build": "tsc",
         "dev": "ts-node-dev --respawn src/index.ts",
-        "start": "node dist/index.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "node dist/index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^5.1.1",
+        "dotenv": "^16.4.7",
+        "express": "^4.21.2",
+        "jsonwebtoken": "^9.0.2",
+        "mongoose": "^8.12.1"
+    },
+    "devDependencies": {
+        "@types/bcrypt": "^5.0.2",
+        "@types/express": "^5.0.1",
+        "@types/jsonwebtoken": "^9.0.9",
+        "@types/mongoose": "^5.11.97",
+        "ts-node-dev": "^2.0.0",
+        "typescript": "^5.8.2"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Ken-zzy/To-Do-API.git"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
     "type": "commonjs",
     "bugs": {
         "url": "https://github.com/Ken-zzy/To-Do-API/issues"
     },
-    "homepage": "https://github.com/Ken-zzy/To-Do-API#readme",
-    "dependencies": {
-        "@types/bcrypt": "^5.0.2",
-        "@types/express": "^5.0.0",
-        "@types/jsonwebtoken": "^9.0.9",
-        "@types/mongoose": "^5.11.96",
-        "bcrypt": "^5.1.1",
-        "dotenv": "^16.4.7",
-        "express": "^4.21.2",
-        "jsonwebtoken": "^9.0.2",
-        "mongoose": "^8.12.1",
-        "ts-node-dev": "^2.0.0"
-    },
-    "devDependencies": {
-        "typescript": "^5.3.3"
-    }
+    "homepage": "https://github.com/Ken-zzy/To-Do-API#readme"
 }
