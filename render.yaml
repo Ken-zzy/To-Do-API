@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: note-api
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: MONGODB_URI
+        value: ${MONGODB_URI}
+      - key: JWT_SECRET
+        value: ${JWT_SECRET}
+      - key: PORT
+        value: 3000 
+    disk:
+      name: node_modules
+      mountPath: /app/node_modules
+      sizeGB: 1
