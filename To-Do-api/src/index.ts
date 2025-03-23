@@ -2,9 +2,9 @@ import express, { Request, Response, NextFunction } from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import Note from './models/Note';
-import { register, login } from './controllers/auth';
-import { authenticate } from './middleware/auth';
-import { AuthRequest } from './interfaces';
+import { register, login } from '../controllers/auth';
+import { authenticate } from '../middleware/auth';
+import { AuthRequest } from '../../src/To-Do-API/interfaces';
 
 dotenv.config();
 
